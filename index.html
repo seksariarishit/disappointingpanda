@@ -198,27 +198,27 @@
     document.getElementById("quote").innerText = quotes[index];
   };
 
-  async function subscribe() {
-    const email = document.getElementById("emailInput").value.trim();
-    const successMessage = document.getElementById("successMessage");
+ async function subscribe() {
+      const email = document.getElementById("emailInput").value.trim();
+      const successMessage = document.getElementById("successMessage");
 
-    if (!email || !email.includes("@") || !email.includes(".")) {
-      alert("Please enter a valid email.");
-      return;
+      if (!email || !email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email.");
+        return;
+      }
+
+      try {
+        await fetch('https://script.google.com/macros/s/AKfycbwonas7nXD5dOSisT6-UEDXB8w1S73RB6jJJaplFF7Nrq-QgI5f7S1e3Yh3zmiPVb25bw/exec', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'email=' + encodeURIComponent(email)
+        });
+
+        document.getElementById("email-form").style.display = "none";
+        successMessage.style.display = "block";
+      } catch (e) {
+        alert("Something went wrong. Try again later.");
+      }
     }
-
-    try {
-      await fetch('https://script.google.com/macros/s/AKfycbwonas7nXD5dOSisT6-UEDXB8w1S73RB6jJJaplFF7Nrq-QgI5f7S1e3Yh3zmiPVb25bw/exec', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'email=' + encodeURIComponent(email)
-      });
-
-      document.getElementById("email-form").style.display = "none";
-      successMessage.style.display = "block";
-    } catch (e) {
-      alert("Something went wrong. Try again later.");
-    }
-  }
-</script>
+  </script>
 </html>

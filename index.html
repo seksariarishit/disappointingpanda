@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Disappointment Panda</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #0a0a0a;
@@ -12,7 +12,6 @@
       --muted: #888;
       --hover: #1e1e1e;
       --input-bg: #1c1c1c;
-      --accent: #ffffff;
     }
 
     html, body {
@@ -22,59 +21,53 @@
       background-color: var(--bg);
       color: var(--fg);
       height: 100%;
-      display: flex;
-      flex-direction: column;
+      overflow: hidden;
     }
 
     main {
-      flex: 1;
+      height: calc(100vh - 60px);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 3rem 2rem;
       text-align: center;
+      padding: 2rem;
     }
 
     .panda-logo {
       width: 38px;
       height: 38px;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       filter: brightness(0) invert(1);
     }
 
     h1 {
-      font-size: 2.5rem;
-      font-weight: 600;
+      font-size: 2.25rem;
       margin: 0;
     }
 
     .subheading {
       font-size: 0.95rem;
       color: var(--muted);
-      margin: 1rem 0 3rem;
+      margin: 0.75rem 0 2.5rem;
     }
 
     #date {
       font-size: 1.05rem;
-      font-weight: 500;
-      margin-bottom: 1.5rem;
-      color: #ccc;
+      color: #bbb;
+      margin-bottom: 1.2rem;
     }
 
     .quote {
-      font-size: 1.5rem;
-      font-weight: 500;
-      max-width: 800px;
+      font-size: 1.4rem;
+      max-width: 700px;
       line-height: 1.6;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       padding: 0 1rem;
     }
 
     .email-form {
       display: flex;
-      flex-direction: row;
-      align-items: center;
       gap: 0.5rem;
       flex-wrap: wrap;
       justify-content: center;
@@ -90,19 +83,19 @@
       width: 250px;
     }
 
-    input[type="email"]::placeholder {
+    input::placeholder {
       color: #777;
     }
 
     button {
       background-color: var(--fg);
       color: var(--bg);
-      padding: 0.85rem 1.25rem;
-      font-size: 1rem;
       border: none;
       border-radius: 6px;
+      padding: 0.85rem 1.2rem;
+      font-size: 1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s ease;
     }
 
     button:hover {
@@ -123,13 +116,13 @@
     }
 
     .socials {
-      margin-top: 3rem;
+      margin-top: 2rem;
     }
 
     .socials a img {
       width: 24px;
       height: 24px;
-      margin: 0 10px;
+      margin: 0 8px;
       filter: brightness(0) invert(1);
       opacity: 0.6;
       transition: opacity 0.2s ease;
@@ -140,43 +133,32 @@
     }
 
     footer {
-      padding: 1rem 0;
+      height: 60px;
       font-size: 0.75rem;
       color: var(--muted);
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     @media (max-width: 600px) {
-      .quote {
-        font-size: 1.2rem;
-      }
-
-      input[type="email"] {
-        width: 100%;
-      }
-
-      .email-form {
-        flex-direction: column;
-      }
-
-      button {
-        width: 100%;
-      }
-
-      main {
-        padding: 2rem 1rem;
-      }
+      .quote { font-size: 1.15rem; }
+      input[type="email"], button { width: 100%; }
+      .email-form { flex-direction: column; }
+      main { padding: 1.5rem 1rem; }
     }
   </style>
 </head>
-<body>
 
+<body>
   <main>
-    <img src="panda_8372124.png" alt="Panda Logo" class="panda-logo" />    <h1>Disappointment Panda</h1>
+    <img src="panda.png" alt="Panda Logo" class="panda-logo" />
+    <h1>Disappointment Panda</h1>
     <div class="subheading">Not what you want to hear — what you need to.</div>
 
     <div id="date"></div>
-    <div class="quote" id="quote"></div>
+    <div id="quote" class="quote"></div>
 
     <div class="email-form" id="email-form">
       <input type="email" id="emailInput" placeholder="Enter your email" />
@@ -201,19 +183,53 @@
 
   <script>
     const quotes = [
-      "You think you're stuck — but you’re just waiting for permission.",
-      "Discipline isn't a punishment. It's a prerequisite for freedom.",
-      "You don’t need more time. You need more clarity.",
-      "What you avoid reveals what you most need to face.",
-      "You won't feel like it — do it anyway.",
+      "What you consider friendship is really just your constant attempts to impress people.",
+      "You crave depth, but you're addicted to attention.",
+      "You’re not overwhelmed — you’re avoiding responsibility.",
+      "You're not being misunderstood. You're just not communicating clearly.",
+      "You don't want the truth. You want the truth to feel good.",
+      "You say you're a perfectionist, but it's just fear in a fancy outfit.",
+      "You're not too busy — you just don't want it badly enough.",
+      "You confuse being needed with being loved.",
+      "You're not stuck. You're just scared of what happens when you move.",
+      "You keep waiting for closure. It's not coming.",
+      "You're not as self-aware as you think. You're just self-absorbed.",
+      "You're not loyal. You're afraid of starting over.",
+      "Your coping mechanisms are now your biggest problems.",
+      "You don’t need a break. You need boundaries.",
+      "You're not being patient. You're procrastinating behind a virtue.",
+      "You're performing healing instead of doing it.",
+      "You want change, but not if it costs your identity.",
+      "You're not deep. You're just mysterious because you avoid honesty.",
+      "You say you’re not ready, but really you just want it to be easy.",
+      "You’re not waiting for the right time. You’re hoping time will change the facts.",
+      "You’re more committed to your suffering than your growth.",
+      "You chase validation because you’ve never given it to yourself.",
+      "You say you're protecting your peace, but really you're just avoiding discomfort.",
+      "You're not forgiving them. You're still hoping they change.",
+      "You're not confused. You're pretending not to know because the truth requires action.",
+      "You're not evolving. You're escaping accountability.",
+      "You say 'I don't know' because it's easier than deciding.",
+      "You don’t want love. You want to be chosen without effort.",
+      "You want loyalty from others but flexibility for yourself.",
+      "You call it ‘boundaries’ but it’s just emotional withdrawal.",
+      "You're not being honest. You're being indirect to protect your image.",
+      "You don’t set high standards. You just avoid real intimacy.",
+      "You’re afraid of rejection — but even more afraid of being seen.",
+      "You self-sabotage because failure on your terms feels safer than success on life's.",
       "You don’t want advice. You want agreement.",
-      "You're not waiting for clarity. You're avoiding disappointment."
+      "You're not ghosting. You're escaping guilt.",
+      "You're not always the victim. Sometimes, you're just not listening.",
+      "You can’t fix people. But you keep trying to feel needed.",
+      "You're not waiting for clarity. You're avoiding disappointment.",
+      "You say you’re healing, but you’re just hiding better."
     ];
 
-    const today = new Date();
-    const index = today.getDate() % quotes.length;
-    document.getElementById("date").innerText = today.toDateString();
-    document.getElementById("quote").innerText = quotes[index];
+    window.onload = () => {
+      const index = new Date().getDate() % quotes.length;
+      document.getElementById("date").innerText = new Date().toDateString();
+      document.getElementById("quote").innerText = quotes[index];
+    };
 
     async function subscribe() {
       const email = document.getElementById("emailInput").value.trim();
@@ -225,7 +241,7 @@
       }
 
       try {
-        await fetch('https://script.google.com/macros/s/AKfycbwonas7nXD5dOSisT6-UEDXB8w1S73RB6jJJaplFF7Nrq-QgI5f7S1e3Yh3zmiPVb25bw/exec', {
+        await fetch('https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec', {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: 'email=' + encodeURIComponent(email)
@@ -238,6 +254,5 @@
       }
     }
   </script>
-
 </body>
 </html>

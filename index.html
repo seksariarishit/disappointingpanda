@@ -153,7 +153,7 @@
 
 <body>
   <main>
-    <img src="panda.png" alt="Panda Logo" class="panda-logo" />
+    <img src="panda_8372124.png" alt="Panda Logo" class="panda-logo" />
     <h1>Disappointment Panda</h1>
     <div class="subheading">Not what you want to hear — what you need to.</div>
 
@@ -181,78 +181,44 @@
     Built by Rishit Seksaria · Inspired by Mark Manson’s Disappointment Panda.
   </footer>
 
-  <script>
-    const quotes = [
-      "What you consider friendship is really just your constant attempts to impress people.",
-      "You crave depth, but you're addicted to attention.",
-      "You’re not overwhelmed — you’re avoiding responsibility.",
-      "You're not being misunderstood. You're just not communicating clearly.",
-      "You don't want the truth. You want the truth to feel good.",
-      "You say you're a perfectionist, but it's just fear in a fancy outfit.",
-      "You're not too busy — you just don't want it badly enough.",
-      "You confuse being needed with being loved.",
-      "You're not stuck. You're just scared of what happens when you move.",
-      "You keep waiting for closure. It's not coming.",
-      "You're not as self-aware as you think. You're just self-absorbed.",
-      "You're not loyal. You're afraid of starting over.",
-      "Your coping mechanisms are now your biggest problems.",
-      "You don’t need a break. You need boundaries.",
-      "You're not being patient. You're procrastinating behind a virtue.",
-      "You're performing healing instead of doing it.",
-      "You want change, but not if it costs your identity.",
-      "You're not deep. You're just mysterious because you avoid honesty.",
-      "You say you’re not ready, but really you just want it to be easy.",
-      "You’re not waiting for the right time. You’re hoping time will change the facts.",
-      "You’re more committed to your suffering than your growth.",
-      "You chase validation because you’ve never given it to yourself.",
-      "You say you're protecting your peace, but really you're just avoiding discomfort.",
-      "You're not forgiving them. You're still hoping they change.",
-      "You're not confused. You're pretending not to know because the truth requires action.",
-      "You're not evolving. You're escaping accountability.",
-      "You say 'I don't know' because it's easier than deciding.",
-      "You don’t want love. You want to be chosen without effort.",
-      "You want loyalty from others but flexibility for yourself.",
-      "You call it ‘boundaries’ but it’s just emotional withdrawal.",
-      "You're not being honest. You're being indirect to protect your image.",
-      "You don’t set high standards. You just avoid real intimacy.",
-      "You’re afraid of rejection — but even more afraid of being seen.",
-      "You self-sabotage because failure on your terms feels safer than success on life's.",
-      "You don’t want advice. You want agreement.",
-      "You're not waiting for clarity. You're avoiding disappointment.",
-      "You're not ghosting. You're escaping guilt.",
-      "You're not always the victim. Sometimes, you're just not listening.",
-      "You can’t fix people. But you keep trying to feel needed.",
-      "You say you’re healing, but you’re just hiding better."
-    ];
+ <script>
+  const quotes = [
+    "What you consider friendship is really just your constant attempts to impress people.",
+    "You crave depth, but you're addicted to attention.",
+    "You’re not overwhelmed — you’re avoiding responsibility.",
+    "You're not being misunderstood. You're just not communicating clearly.",
+    "You don't want the truth. You want the truth to feel good.",
+    "You don’t want advice. You want agreement.",
+    "You're not waiting for clarity. You're avoiding disappointment."
+  ];
 
-    window.onload = () => {
-      const index = new Date().getDate() % quotes.length;
-      document.getElementById("date").innerText = new Date().toDateString();
-      document.getElementById("quote").innerText = quotes[index];
-    };
+  window.onload = () => {
+    const index = new Date().getDate() % quotes.length;
+    document.getElementById("date").innerText = new Date().toDateString();
+    document.getElementById("quote").innerText = quotes[index];
+  };
 
-    async function subscribe() {
-      const email = document.getElementById("emailInput").value.trim();
-      const successMessage = document.getElementById("successMessage");
+  async function subscribe() {
+    const email = document.getElementById("emailInput").value.trim();
+    const successMessage = document.getElementById("successMessage");
 
-      if (!email || !email.includes("@") || !email.includes(".")) {
-        alert("Please enter a valid email.");
-        return;
-      }
-
-      try {
-        await fetch('https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: 'email=' + encodeURIComponent(email)
-        });
-
-        document.getElementById("email-form").style.display = "none";
-        successMessage.style.display = "block";
-      } catch (e) {
-        alert("Something went wrong. Try again later.");
-      }
+    if (!email || !email.includes("@") || !email.includes(".")) {
+      alert("Please enter a valid email.");
+      return;
     }
-  </script>
-</body>
+
+    try {
+      await fetch('https://script.google.com/macros/s/YOUR_DEPLOYED_SCRIPT_ID/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'email=' + encodeURIComponent(email)
+      });
+
+      document.getElementById("email-form").style.display = "none";
+      successMessage.style.display = "block";
+    } catch (e) {
+      alert("Something went wrong. Try again later.");
+    }
+  }
+</script>
 </html>
